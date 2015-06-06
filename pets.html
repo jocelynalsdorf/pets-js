@@ -3,8 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
+  
   <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
   <link href="css/styles.css" rel="stylesheet" type="text/css" />
   <script src="js/jquery-1.11.3.js" type="text/javascript">
@@ -27,38 +26,40 @@
        <form id="new-pet"> 
         <div class="alert alert-info form-group">      
             <div class="col-md-1">
-              <label for="new-dog" class="radio-inline"><input type="radio" name=
-              "pet-type" value="dog" id="new-dog" />Dog</label>
+              <label for="new-dog" class="radio-inline"><input type="radio" name="pet-type" value="dog" id="new-dog" />Dog</label>
             </div>
 
             <div class="col-md-1">
-              <label for="new-cat" class="radio-inline"><input type="radio" name=
-              "pet-type" id="new-cat" />Cat</label>
+              <label for="new-cat" class="radio-inline">
+              <input type="radio" name="pet-type" id="new-cat" value="cat"/>Cat</label>
             </div>
 
             <div class="col-md-1">
-              <label for="new-fish" class="radio-inline"><input type="radio" name=
-              "pet-type" id="new-fish" />Fishy</label>
+              <label for="new-fish" class="radio-inline">
+              <input type="radio" name="pet-type" id="new-fish" value="fish" />Fishy</label>
             </div>
 
             <div class="col-md-1">
-              <label for="new-horse" class="radio-inline"><input type="radio" name=
-              "pet-type" id="new-horse" />Horse</label>
+              <label for="new-horse" class="radio-inline">
+              <input type="radio" name="pet-type" id="new-horse" value="horse"/>Horse</label>
             </div>          
      	  </div>
+
      	  <h3>Step 2: Enter your pet's info:</h3>
         <div id="new-pet-info-display" class="alert alert-info">
           
           <div class="form-group">
             <label for="new-name">What's your pet's name:</label> <input type="text"
-            class="form-control new-name" />
+            class="form-control new-name" id="pet-name"/>
           </div>
 
           <div class="form-group">
             <label for="user-pet-age">What year your pet was born:</label>
-            <input type="text" class="form-control user-pet-age" />
-          </div>      
+            <input type="text" class="form-control user-pet-age" id="age"/>
+          </div> 
+
         </div>
+        <div id="lifestyle-questions">
         <h3>Step 3: Answer some questions about your pet's lifestyle and habits</h3>
         <div class="alert alert-info col-sm-4">  
           <h5>How many drinks do they have per day?</h5>    
@@ -79,7 +80,7 @@
 
             <div>
               <label for="drink-4" class="radio-inline"><input type="radio" name=
-              "drinks" id="drink-4" value="4"/>None; they are very <em>judgy</em> about it</label>
+              "drinks" id="drink-4" value="4"/>None and they are very <em>judgy</em> about it</label>
             </div>
                 
      	  </div>
@@ -91,13 +92,13 @@
             </div>
 
             <div>
-              <label for="smoke-2" class="radio-inline"><input type="radio" name=
-              "smokes" id="smoke-2" value="2" /> Not sure but I'm often missing some cigs</label>
+              <label for="smoke-3" class="radio-inline"><input type="radio" name=
+              "smokes" id="smoke-3" value="3"/>They reek of smoke/have yellow nails</label>
             </div>
 
             <div>
-              <label for="smoke-3" class="radio-inline"><input type="radio" name=
-              "smokes" id="smoke-3" value="3"/>They reek of smoke/have yellow nails</label>
+              <label for="smoke-2" class="radio-inline"><input type="radio" name=
+              "smokes" id="smoke-2" value="2" /> Not sure but I'm often missing some cigs</label>
             </div>
 
             <div>
@@ -106,32 +107,103 @@
             </div>        
      	  </div>
      	  <div class="alert alert-info col-sm-4">   
-     	    <h5>How many drinks do they have per/day?</h5>    
+     	    <h5>How much daily exercise do they get?</h5>    
             <div>
-              <label for="new-dog" class="radio-inline"><input type="radio" name=
-              "pet-type" value="dog" id="new-dog" />Dog</label>
+              <label for="exercise-1" class="radio-inline"><input type="radio" name=
+              "exercise" value="1" id="exercise-1" />As much as me, so...none</label>
             </div>
 
             <div>
-              <label for="new-cat" class="radio-inline"><input type="radio" name=
-              "pet-type" id="new-cat" />Cat</label>
+              <label for="exercise-2" class="radio-inline"><input type="radio" name=
+              "exercise" id="exercise-2" value="2" />They do pilates 3x/week</label>
             </div>
 
             <div>
-              <label for="new-fish" class="radio-inline"><input type="radio" name=
-              "pet-type" id="new-fish" />Fishy</label>
+              <label for="exercise-3" class="radio-inline"><input type="radio" name=
+              "exercise" id="exercise-3" value="3" />They ride their bike to work daily</label>
             </div>
 
             <div>
-              <label for="new-horse" class="radio-inline"><input type="radio" name=
-              "pet-type" id="new-horse" />Horse</label>
+              <label for="exercise-4" class="radio-inline"><input type="radio" name=
+              "exercise" id="exercise-4" value="4"/>Likely a lot since I don't let them inside</label>
             </div>
                 
      	  </div>
+     	     <div class="alert alert-info col-sm-4">  
+          <h5>How satisfied with their life is your pet?</h5>    
+            <div>
+              <label for="satisfaction-1" class="radio-inline"><input type="radio" name=
+              "satisfaction" value="1" id="satisfaction-1" value="1"/>They seem content with generic dog food</label>
+            </div>
+
+            <div>
+              <label for="drink-3" class="radio-inline"><input type="radio" name=
+              "drinks" id="drink-3" value="3" />They are often distant and moody</label>
+            </div>
+
+            <div>
+              <label for="satisfaction-2" class="radio-inline"><input type="radio" name=
+              "satisfaction" id="satisfaction-2" value="2" />Very unless they watch too much tv</label>
+            </div>
+
+            <div>
+              <label for="drink-4" class="radio-inline"><input type="radio" name=
+              "drinks" id="drink-4" value="4"/>Not at all; I had to microchip them JIK</label>
+            </div>
+                
+     	  </div>
+     	  <div class="alert alert-info col-sm-4 ">  
+     	    <h5>Do they have regular bowel movements?</h5>      
+            <div>
+              <label for="poop-1" class="radio-inline"><input type="radio" name=
+              "bowels" value="1" id="poop-1" value="1"/>Yes, they poop when & where I tell them</label>
+            </div>
+
+            <div>
+              <label for="poop-2" class="radio-inline"><input type="radio" name=
+              "bowels" id="poop-2" value="2" /> Yes, based on what my lawn guy says</label>
+            </div>
+
+            <div>
+              <label for="poop-4" class="radio-inline"><input type="radio" name=
+              "bowels" id="poop-4" value="4"/>No, not since they went low-carb</label>
+            </div>
+
+						<div>
+              <label for="poop-3" class="radio-inline"><input type="radio" name=
+              "bowels" id="poop-3" value="3"/>Not sure what's old or new on the rug
+            </div>
+
+     	  </div>
+     	  <div class="alert alert-info col-sm-4">   
+     	    <h5>Is your pet at a healthy weight?</h5>    
+
+            <div>
+              <label for="weight-3" class="radio-inline"><input type="radio" name=
+              "weight" id="weight-3" value="3" />Almost! Only 2 wks left on juice fast</label>
+            </div>
+
+            <div>
+              <label for="weight-1" class="radio-inline"><input type="radio" name=
+              "weight" value="1" id="weight-1" />Yes. They have an athletic build</label>
+            </div>
+
+            <div>
+              <label for="weight-2" class="radio-inline"><input type="radio" name=
+              "weight" id="weight-2" value="2" />No. They are an emotional-eater</label>
+            </div>
+
+            <div>
+              <label for="weight-4" class="radio-inline"><input type="radio" name=
+              "weight" id="weight-4" />No. Everything goes to their hips</label>
+            </div>
+          </div>      
+     	  </div>
+
      	  <div class="col-md-12 button-area">
      	   <button style="width:100%" type="submit" class="btn btn-stretch">Find Out!</button>
      	   </div>
-       </form> 
+      </form> 
       </div>
     </div>
   </div>

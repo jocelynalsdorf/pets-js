@@ -1,56 +1,55 @@
+function Pet(petType, petName, birthYear) {
+	this.petType = petType;
+	this.petName = petName;
+	this.birthYear = birthYear;
+	this.lifestyleScores = [];
+}
+
+Pet.prototype.ageConverter = function() {
+	alert("not done yet");
+}
+
+Pet.prototype.lifestyleFactors = function(newScore) {
+ alert(score);
+}
+
+function Score(drinks,smokes,exercise,satisfaction,poop,weight) {
+	this.drinks = drinks;
+	this.smokes = smokes;
+	this.exercise = exercise;
+	this.satisfaction = satisfaction;
+	this.poop = poop;
+	this.weight = weight;
+}
+
+
 $(document).ready(function() {
-	$("#add-address").click(function(){
-		$("#new-addresses").append('<div class="new-address">' + 
-			 '<div class="form-group">' +
-			 '<label for="new-street">Street</label>' + 
-			 '<input type="text" class="form-control new-street">' + 
-			 '</div> ' + 
-			 '<div class="form-group">' + 
-			 '<label for="new-city">City</label>' + 
-			 '<input type="text" class="form-control new-city"></div>' + 
-			 '<div class="form-group">' + 
-			 '<label for="new-state">State</label>' + 
-			 '<input type="text" class="form-control new-state"></div>' + 
-			 '</div>');
-
-	});
-
-
-	$("form#new-contact").submit(function(event){
 	
-
-	var inputtedFirstName = $("input#new-first-name").val();
-	var inputtedLastName = $("input#new-last-name").val();
-	var newContact = {firstName: inputtedFirstName, lastName: inputtedLastName, addresses: []};
-
-	$("#new-addresses").each(function(){
-		var inputtedStreet = $(this).find("input.new-street").val();
-		var inputtedCity = $(this).find("input.new-city").val();
-		var inputtedState = $(this).find("input.new-state").val();
-
-		var newAddress = {street: inputtedStreet, city: inputtedCity, state: inputtedState};
-		newContact.addresses.push(newAddress);
-	});
-
-	$("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + " " + newContact.lastName + "</span></li>");
-
-	$("input#new-first-name").val("");
-	$("input#new-last-name").val("");
-	$("input.new-street").val("");
-	$("input.new-city").val("");
-	$("input.new-state").val("");
-
-	$(".contact").last().click(function(){
-		$("#show-contact").show();
-		$("#show-contact h2").text(newContact.firstName + " " + newContact.lastName);
-		$(".first-name").text(newContact.firstName);
-		$(".last-name").text(newContact.lastName);
-
-		newContact.addresses.forEach(function(address){
-		$("ul#addresses").append("<li>" + address.street + "," + address.city + "," + address.state + "</li>");
-		});
-	});
-
+	$("form#new-pet").submit(function(event){
 	event.preventDefault();
+	var inputtedPetType = $('input[name="pet-type"]:checked').val();
+	var inputtedPetName = $("input#pet-name").val();
+	var inputtedBirthYear = $("input#age").val();
+
+	
+		
+
+	var newPet = new Pet(inputtedPetType, inputtedPetName,inputtedBirthYear);
+		alert(newPet.petName);
+
+		 $("#lifestyle-questions").each(function(){
+			var inputtedDrinking = $(this).find('input[name="drinks"]:checked').val();
+			var inputtedSmoking = $(this).find('input[name="smokes"]:checked').val();
+			var inputtedExercise = $(this).find('input[name="exercise"]:checked').val();
+			var inputtedSatisfaction = $(this).find('input[name="satisfaction"]:checked').val();
+			var inputtedPoop = $(this).find('input[name="bowels"]:checked').val();
+			var inputtedWeight = $(this).find('input[name="weight"]:checked').val();
+
+			var newScore = {drinks: inputtedDrinking, smokes: inputtedSmoking , exercise: inputtedExercise, satisfaction: inputtedSatisfaction, poop: inputtedPoop, weight: inputtedWeight};
+			newPet.lifestyleScores.push(newScore);
+			console.log(newPet.lifestyleScores);
+		});
+	
 	});
+
 });
