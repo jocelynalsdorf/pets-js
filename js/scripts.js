@@ -107,8 +107,18 @@ $(document).ready(function() {
 			newPet.lifestyleScores.push(newScore);
 			console.log(newPet.lifestyleScores);
 		});
+		 var orginalAge = newPet.ageConverter() - newPet.addUp();
+		 $(".overlay").fadeIn(1000);
+	   $(".actual-age").text(newPet.ageConverter());
+	   $(".user-pet-name").text(newPet.petName);
+	   $(".orginal-age").text(orginalAge);
 
-	alert(newPet.ageConverter());
+  	/*--- Hide information modal box ---*/
+  	$("a.btn-close").click(function(){
+  		$(".overlay").fadeOut(1000);
+  	
+  	});
+
 	});
 
 });
