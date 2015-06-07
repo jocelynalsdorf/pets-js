@@ -57,7 +57,7 @@ Pet.prototype.ageConverter = function() {
 		else {
 			alert("that's not a legal pet, stupid")
 		}
-return baseAge;
+return baseAge + this.addUp();
 }
 
 Pet.prototype.lifestyleFactors = function(newScore) {
